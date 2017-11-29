@@ -1,0 +1,27 @@
+<div>
+    <form (ngSubmit)="onLogin(f)" #f="ngForm">
+        <h2>Login</h2>
+        <label>ID</label>
+        <input 
+            type="email" 
+            placeholder="ID" 
+            id="email" 
+            name="email" 
+            ngModel
+            required
+        />
+        <label>Password</label>
+        <input 
+            type="password" 
+            placeholder="password" 
+            id="password" 
+            name="password" 
+            ngModel
+            required
+        />
+        <button 
+            type="submit"
+            [disabled]="!f.valid"    
+        >Submit</button>
+    </form>
+</div>

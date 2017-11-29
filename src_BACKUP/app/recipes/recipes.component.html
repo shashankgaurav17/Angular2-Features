@@ -1,0 +1,17 @@
+<div>
+  <div class="dir">
+    <div class="left">
+      <button (click) = "onODDClick()">Show ODD No#</button>
+      <p 
+        *ngFor = "let x of oddNo"
+        [ngStyle] = "{'background-color': x % 2 == 0 ? 'green' : 'red'}"
+        myDirective
+      >
+        {{x}}
+      </p>
+    </div>
+    <div class="right">
+      <button>Show EVEN No#</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="server_edit">
+  <h2>Update the Server Details</h2>
+  <div class="details">
+      <label>Name:</label>
+      <input
+        type="text"
+        value="{{serverDetails.name}}"
+        #updatedServerName
+      />
+  </div>
+  <div class="details">
+      <label>Type:</label>
+      <select #updatedServerType>
+        <option
+          *ngFor = "let val of allServers"
+          value="{{val.type}}"
+          selected="val.id == serverDetails.id ? {{val.type}} :  "
+        >
+          {{val.type}}
+        </option>
+      </select>
+  </div>
+  <button (click) = "onServerUpdate(updatedServerName, updatedServerType)">Update</button>
+</div>

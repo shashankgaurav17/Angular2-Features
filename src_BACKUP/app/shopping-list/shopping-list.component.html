@@ -1,0 +1,68 @@
+<div class="sh_list">  
+  <div class="shoping_list">
+    <h1>Shoppping List</h1>
+
+    <div class="Welcome">
+      <input 
+        type="text"
+        placeholder="PLease Enter your Name"
+        [(ngModel)] = "customerName"
+      />
+      <label>welcome {{customerName}}</label>
+
+      <!-- <app-shopping-list-child (payBill) = "onFinalBillPay($event)"></app-shopping-list-child> -->
+
+      <p *ngIf="showBill; else noBill">You total bill is Rs. {{finalBillrupee}}</p>
+      <ng-template #noBill>
+        <p>NOTHING TO SHOW</p>
+      </ng-template>
+    </div>
+
+    <label>Name: </label>
+    <input 
+      type="text" 
+      id="sh_name" 
+      #sh_name  
+    />
+    <label>Price</label>
+    <input 
+      type="number" 
+      id="sh_amount" 
+      #sh_amount
+    />
+  </div>
+  <div>
+    <button (click) = "onAdd(sh_name, sh_amount)">Add</button>
+    <button>Clear</button>
+  </div>
+
+  <div>
+    <ul>
+      <li
+        *ngFor = "let item of items"
+      >
+      {{item.name}}, {{item.amount}}
+    </li>
+    </ul>
+  </div>
+
+  <div>
+    <p>List of  items to be purchsed:</p>
+    <input 
+      type="text"
+      placeholder="enter items to purchase"
+      #itemInput_ViewChild
+    />
+    <button
+      (click) = "itemAdd()"
+    >Enter Items</button>
+
+  </div>
+
+  <div>
+    <p *ngFor = "let d of items1">{{d.name}}</p>
+  </div>
+</div>
+
+
+<app-shopping-list-child [xxx] = "finaltotal" (payBill) = "onFinalBillPay($event)"></app-shopping-list-child>

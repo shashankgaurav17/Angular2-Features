@@ -1,0 +1,23 @@
+<div>
+  <h1>(Services Test) Add Server: </h1>
+  <input
+    placeholder="Server Name"
+    type="text"
+    #serverNameInput
+  />
+  <select #typeInput>
+    <option value="Red">Red</option>
+    <option value="Green">Green</option>
+    <option value="Yellow">Yellow</option>
+  </select>
+  <button (click)="onServerAdd(serverNameInput, typeInput)">Add Server</button>
+</div>
+
+<div>
+  <div *ngFor = "let servers of serverName; let i = index">
+    <p>Server {{i}} : {{servers.name}} <span><b>Type</b>: {{servers.type}}</span></p>
+    <button (click) = "onButtonClick(servers.name, servers.type, 'Activate')">Activate</button>
+    <button (click) = "onButtonClick(servers.name, servers.type, 'Deactivate')">Deactivate</button>
+    <button (click) = "onButtonClick(servers.name, servers.type, 'Resume')">Resume</button>
+  </div>
+</div>

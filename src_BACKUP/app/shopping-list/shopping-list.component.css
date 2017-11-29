@@ -1,0 +1,12 @@
+.Welcome{
+    margin-bottom: 20px;
+    float: right;
+}
+
+.Welcome input{
+    display: block;
+}
+
+.sh_list{
+    background-color: lightblue;
+}

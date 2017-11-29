@@ -1,0 +1,14 @@
+<div class="signup">
+  <h2>Register yourself</h2>
+  <form (ngSubmit)="onsignUp(email,password)">
+    <div>
+      <label>EmailID: </label>
+      <input type="email" id="email" #email/>
+    </div>
+    <div>
+        <label>Password: </label>
+        <input type="password" id="password" #password/>
+      </div>
+    <button type="submit">SignUp</button>
+  </form>
+</div>

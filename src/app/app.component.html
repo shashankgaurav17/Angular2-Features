@@ -1,0 +1,16 @@
+<nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/recipes" routerLinkActive="active">Directives</a>
+    <a routerLink="/shopping_list" routerLinkActive="active">Data Binding</a>
+    <a routerLink="/services_test" routerLinkActive="active">Service Test</a>
+    <a routerLink="/firebase" routerLinkActive="active">Firebase</a>
+    <a routerLink ="/users" routerLinkActive="active">Routing_USERS</a>
+    <a routerLink ="/servers" routerLinkActive="active">Routing_Servers</a>
+    <ng-template [ngIf]="!authService.isAuthenticated()">
+        <a routerLink="/signup" routerLinkActive="active" class="pull-right">SignUp</a>
+        <a routerLink="/login" routerLinkActive="active" class="pull-right">Login</a>
+    </ng-template>
+    <a style="cursor:pointer;" (click) = "onLogout()" *ngIf="authService.isAuthenticated()" class="pull-right">Logout</a>
+</nav>
+<router-outlet></router-outlet>
+
