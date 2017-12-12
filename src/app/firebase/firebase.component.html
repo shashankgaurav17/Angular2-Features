@@ -1,0 +1,20 @@
+<div>
+  <h2>Add Server</h2>  
+  <input
+    type="text"
+    placeholder="Server Name"
+    #serverName
+  />
+  <select #serverType>
+    <option>Active</option>
+    <option>Deactive</option>
+    <option>Pending</option>
+  </select>
+  <button (click)="onServerAdd(serverName, serverType)">Add Server</button>
+  <p [ngStyle]="serverDetails.name == '' ? {'display' : 'none'} : {'display': 'block'}">Server <b>{{serverDetails.name}}</b> is created with status <b>{{serverDetails.type}}</b></p>
+</div>
+
+<div>
+  <h2>Get Server</h2>
+  <button (click) = "onGetServer()">Get Server</button>
+</div>
